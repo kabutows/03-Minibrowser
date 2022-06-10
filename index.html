@@ -1,11 +1,21 @@
-<main>
+<!--<main>
     <header>
         <div class="close-area"></div>
         <input placeholder="https://..." value="https://mariosouto.com">
     </header>
     <iframe src="https://mariosouto.com"></iframe>
-</main>
+</main> -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Browser Exeperimental</title>
+</head>
+<body>
+    
 <script>
 
     var aba1 = {
@@ -18,8 +28,18 @@
         url: 'https://cruzeirodosul.instructure.com/?login_success=1'
     }
 
-    var abas = [aba1,aba2]
+    var abas = [aba1,aba2];
+
+    for(aba of abas){
+        console.log(aba.titulo);
+
+        var valorAtualHTML = document.body.innerHTML;
+        document.body.innerHTML = valorAtualHTML + `<a href="${aba.url}">${aba.titulo}<a/>`;
+    }
 
 </script>
 
 <link rel="stylesheet" href="./style.css" />
+
+</body>
+</html>
